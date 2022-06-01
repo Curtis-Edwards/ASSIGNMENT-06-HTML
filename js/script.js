@@ -27,13 +27,6 @@
       jsonData.message + 
       '" alt="API dog image" ' +
       '>'
-    if (jsonData.status == "success") {
-      document.getElementById("breed").innerHTML =
-      "<p>breed: " +
-      jsonData.breeds
-  } else {
-    document.getElementById("image").innerHTML = "error"
-  }
   } catch (err) {
     console.log(err)
   }
