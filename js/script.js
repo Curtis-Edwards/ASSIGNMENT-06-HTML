@@ -17,3 +17,26 @@
  * Input.
  */
 
+ const getImage = async (URLAddress) => {
+  try {
+    const result = await fetch(URLAddress)
+    const jsonData = await result.json()
+    console.log(jsonData)
+    document.getElementById("image").innerHTML =
+    '<img src="' + 
+      jsonData.message + 
+      '" alt="API dog image" ' +
+      '>'
+    if (jsonData.artist_url != "none") {
+      document.getElementById("breed").innerHTML =
+      "<p>breed: " +
+      jsonData.breeds
+  } else {
+    document.getElementById("image").innerHTML = "error"
+  }
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+getImage("https://dog.ceo/api/breeds/image/random")
