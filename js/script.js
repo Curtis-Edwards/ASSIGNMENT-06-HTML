@@ -27,7 +27,7 @@
       jsonData.message + 
       '" alt="API dog image" ' +
       '>'
-    if (jsonData.artist_url != "none") {
+    if (jsonData.status == "success") {
       document.getElementById("breed").innerHTML =
       "<p>breed: " +
       jsonData.breeds
